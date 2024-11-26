@@ -1,4 +1,4 @@
-pipeline {
+/*pipeline {
     agent any
     tools {
         maven 'maven' // Name must match the Maven installation in Jenkins Global Tool Configuration
@@ -27,4 +27,20 @@ pipeline {
             }
         }
     }
+}*/
+
+pipeline {
+  agent { label 'linux' }
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '5'))
+  }
+  stages {
+    stage('Scan') {
+      steps {
+        withSonarQubeEnv(installationName: 'SonarQube_Server') { 
+          sh './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
+        }
+      }
+    }
+  }
 }
