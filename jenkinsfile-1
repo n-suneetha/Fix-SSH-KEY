@@ -30,28 +30,25 @@
 }*/
 
 pipeline {
-  agent any
-tools {
-        maven 'maven' // Name must match the Maven installation in Jenkins Global Tool Configuration
-         
+    agent any
+    environment {
+        JAVA_HOME = '/Library/Java/JavaVirtualMachines/openlogic-openjdk-17.jdk/Contents/Home'  // Make sure this points to your correct Java path
+        PATH = "$JAVA_HOME/bin:$PATH"
     }
-environment {
-        JAVA_HOME = '/Library/Java/JavaVirtualMachines/openlogic-openjdk-17.jdk/Contents/Home'  // Update this path to the correct location
-        PATH = "$JAVA_HOME/bin:$PATH"  // Add Java to the PATH
+    tools {
+        maven 'maven'  // Ensure Maven is correctly configured in Jenkins Global Tool Configuration
     }
- 
-  stages {
-    stage('Scan') {
-      steps {
-        withSonarQubeEnv(installationName: 'SonarQube_Server') { 
-         sh '''#!/bin/bash
-                    export JAVA_HOME=$JAVA_HOME
-                    export PATH=$JAVA_HOME/bin:$PATH
-                    java -version  # Verify Java version to ensure JAVA_HOME is correct
-                    mvn sonar:sonar
+    stages {
+        stage('Scan') {
+            steps {
+                withSonarQubeEnv(installationName: 'SonarQube_Server') {
+                    sh '''
+                        echo "JAVA_HOME is set to: $JAVA_HOME"
+                        java -version  # Verify that the correct Java version is used
+                        mvn sonar:sonar
                     '''
+                }
+            }
         }
-      }
     }
-  }
 }
