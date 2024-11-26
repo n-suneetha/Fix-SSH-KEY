@@ -1,0 +1,17 @@
+ pipeline {
+    agent any
+
+    stages {
+        stage('Parent credential accessible in child folder Conjur Credentials') {
+            steps {
+                script{
+                    varVal =null
+                withCredentials([usernamePassword(credentialsId: 'test-id', passwordVariable: 'uese', usernameVariable: 'tes')]) {
+                        varVal = CONJUR_SECRET
+                    }
+                echo "Folder-1-Conjur Secret Username Cred Val  : ${varVal}"
+                }
+            }
+        }
+    }
+}
