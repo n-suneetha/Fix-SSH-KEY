@@ -36,7 +36,8 @@ tools {
          
     }
 environment {
-        JAVA_HOME ='/Library/Java/JavaVirtualMachines/openlogic-openjdk-17.jdk/Contents/Home'
+        JAVA_HOME = '/Library/Java/JavaVirtualMachines/openjdk-17.jdk/Contents/Home'  // Update this path to the correct location
+        PATH = "$JAVA_HOME/bin:$PATH"  // Add Java to the PATH
     }
  
   stages {
