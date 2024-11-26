@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Checkout') {
             steps {
-                git url: 'git@github.com:sameershaikahamed/Fix-SSH-KEY.git', branch: 'main' // Replace with your repo URL
+                 checkout scm
             }
         }
         stage('Build & SonarQube Analysis') {
