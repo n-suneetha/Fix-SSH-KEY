@@ -44,7 +44,11 @@ environment {
     stage('Scan') {
       steps {
         withSonarQubeEnv(installationName: 'SonarQube_Server') { 
-         sh 'mvn sonar:sonar'
+         sh '''#!/bin/bash
+                    export JAVA_HOME=$JAVA_HOME
+                    export PATH=$JAVA_HOME/bin:$PATH
+                    mvn sonar:sonar
+                    '''
         }
       }
     }
