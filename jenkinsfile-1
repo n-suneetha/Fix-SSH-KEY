@@ -18,15 +18,11 @@ pipeline {
                  checkout scm
             }
         }
-        stage('Verify JAVA_HOME') {
-            steps {
-                sh 'echo $JAVA_HOME'  // This should print the JDK 17 path in the job logs
-                sh 'java -version'    // This should print the version of JDK 17
-            }
-        }
+       
  
         stage('Build & SonarQube Analysis') {
             steps {
+            sh 'java -version' // Verifies the JAVA_HOME setup
             sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=sonarqube-test -Dsonar.host.url=http://192.168.1.2:9000 -Dsonar.login=******'
                 /*script {
                     // Running Maven and SonarQube analysis
