@@ -28,8 +28,17 @@ pipeline {
  
         stage('Build & SonarQube Analysis') {
             steps {
+            withEnv(["JAVA_HOME=${tool 'JDK17'}"]) {
+                sh '''
+                echo "Using JAVA_HOME=$JAVA_HOME"
+                mvn clean verify sonar:sonar \
+                    -Dsonar.projectKey=sonarqube-test \
+                    -Dsonar.host.url=http://192.168.1.2:9000 \
+                    -Dsonar.login=$SONARQUBE_TOKEN
+                '''
+            }
            // sh 'java -version' // Verifies the JAVA_HOME setup
-            sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=sonarqube-test -Dsonar.host.url=http://192.168.1.2:9000 -Dsonar.login=******'
+            //sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=sonarqube-test -Dsonar.host.url=http://192.168.1.2:9000 -Dsonar.login=******'
                 /*script {
                     // Running Maven and SonarQube analysis
                     withSonarQubeEnv('SonarQube_Server') { // 'SonarQube_Server' is the name of the SonarQube server configured in Jenkins
