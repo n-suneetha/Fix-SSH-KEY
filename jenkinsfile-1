@@ -1,0 +1,38 @@
+pipeline {
+    agent any
+    tools {
+        maven 'maven' // Name must match the Maven installation in Jenkins Global Tool Configuration
+        jdk 'jdk-17'   // Name should match the name configured in Global Tool Configuration for JDK 17
+         
+    }
+    environment {
+        SONARQUBE = 'SonarQube_Server' // Name of the SonarQube server in Jenkins configuration
+      JAVA_HOME = '/Library/Java/JavaVirtualMachines/openlogic-openjdk-17.jdk/Contents/Home'  // Set JAVA_HOME explicitly
+        PATH = "$JAVA_HOME/bin:$PATH"  // Update PATH to include Java 17 binaries
+       SONARQUBE_URL = 'http://192.168.1.2:9000'
+        SONARQUBE_TOKEN = credentials('sonarqube-sever-token-ID')
+    }
+    stages {
+        stage('Verify JAVA_HOME') {
+            steps {
+                sh 'echo $JAVA_HOME'  // This should print the JDK 17 path in the job logs
+                sh 'java -version'    // This should print the version of JDK 17
+            }
+        }
+        stage('Checkout') {
+            steps {
+                git url: 'git@github.com:sameershaikahamed/Fix-SSH-KEY.git', branch: 'main' // Replace with your repo URL
+            }
+        }
+        stage('Build & SonarQube Analysis') {
+            steps {
+                script {
+                    // Running Maven and SonarQube analysis
+                    withSonarQubeEnv('SonarQube_Server') { // 'SonarQube_Server' is the name of the SonarQube server configured in Jenkins
+                        sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=sonarqube-test -Dsonar.host.url=$SONARQUBE_URL -Dsonar.login=$SONARQUBE_TOKEN'
+                    }
+                }
+            }
+        }
+    }
+}
