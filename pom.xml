@@ -232,7 +232,7 @@
 		<profile>
 			<id>jdk-9-and-above</id>
 			<activation>
-				<jdk>11</jdk>
+				<jdk>17</jdk>
 			</activation>
 		</profile>
 	</profiles>
