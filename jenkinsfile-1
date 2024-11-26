@@ -36,7 +36,7 @@ tools {
          
     }
 environment {
-        JAVA_HOME = tool name: 'JDK17', type: 'JDK'  // Set the correct JDK version
+        JAVA_HOME ='/Library/Java/JavaVirtualMachines/openlogic-openjdk-17.jdk/Contents/Home'
     }
  
   stages {
