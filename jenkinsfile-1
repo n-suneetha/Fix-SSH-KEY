@@ -35,6 +35,9 @@ tools {
         maven 'maven' // Name must match the Maven installation in Jenkins Global Tool Configuration
          
     }
+environment {
+        JAVA_HOME = tool name: 'JDK 17', type: 'JDK'  // Set the correct JDK version
+    }
  
   stages {
     stage('Scan') {
