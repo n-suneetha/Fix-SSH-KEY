@@ -36,7 +36,7 @@ tools {
          
     }
 environment {
-        JAVA_HOME = '/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home'  // Update this path to the correct location
+        JAVA_HOME = '/Library/Java/JavaVirtualMachines/openlogic-openjdk-17.jdk/Contents/Home'  // Update this path to the correct location
         PATH = "$JAVA_HOME/bin:$PATH"  // Add Java to the PATH
     }
  
