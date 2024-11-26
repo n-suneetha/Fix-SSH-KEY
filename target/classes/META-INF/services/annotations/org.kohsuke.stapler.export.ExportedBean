@@ -1,0 +1,5 @@
+org.conjur.jenkins.configuration.ConjurJITJobProperty
+org.conjur.jenkins.conjursecrets.ConjurSecretCredentialsImpl
+org.conjur.jenkins.conjursecrets.ConjurSecretUsernameCredentialsImpl
+org.conjur.jenkins.conjursecrets.ConjurSecretUsernameSSHKeyCredentialsImpl
+org.conjur.jenkins.credentials.ConjurCredentialStore$ConjurCredentialStoreAction

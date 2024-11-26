@@ -1,0 +1,11 @@
+/Users/sameer.shaik/MyWorkSpace/17OctV2.2.3-New-BitBucketIssueFixed/conjur-credentials-plugin/src/test/java/org/conjur/jenkins/configuration/ConjurConfigurationTest.java
+/Users/sameer.shaik/MyWorkSpace/17OctV2.2.3-New-BitBucketIssueFixed/conjur-credentials-plugin/target/generated-test-sources/injected/InjectedTest.java
+/Users/sameer.shaik/MyWorkSpace/17OctV2.2.3-New-BitBucketIssueFixed/conjur-credentials-plugin/src/test/java/org/conjur/jenkins/credentials/ConjurCredentialProviderTest.java
+/Users/sameer.shaik/MyWorkSpace/17OctV2.2.3-New-BitBucketIssueFixed/conjur-credentials-plugin/src/test/java/org/conjur/jenkins/conjursecrets/ConjurSecretCredentiTest.java
+/Users/sameer.shaik/MyWorkSpace/17OctV2.2.3-New-BitBucketIssueFixed/conjur-credentials-plugin/src/test/java/org/conjur/jenkins/credentials/ConjurCredentialStoreTest.java
+/Users/sameer.shaik/MyWorkSpace/17OctV2.2.3-New-BitBucketIssueFixed/conjur-credentials-plugin/src/test/java/org/conjur/jenkins/conjursecrets/ConjurSecretCredentialsBindingTest.java
+/Users/sameer.shaik/MyWorkSpace/17OctV2.2.3-New-BitBucketIssueFixed/conjur-credentials-plugin/src/test/java/org/conjur/jenkins/jwtauthimpl/JwtTokenTest.java
+/Users/sameer.shaik/MyWorkSpace/17OctV2.2.3-New-BitBucketIssueFixed/conjur-credentials-plugin/src/test/java/org/conjur/jenkins/conjursecrets/ConjurSecretCredentialImplTest.java
+/Users/sameer.shaik/MyWorkSpace/17OctV2.2.3-New-BitBucketIssueFixed/conjur-credentials-plugin/src/test/java/org/conjur/jenkins/configuration/GlobalConjurConfigurationTest.java
+/Users/sameer.shaik/MyWorkSpace/17OctV2.2.3-New-BitBucketIssueFixed/conjur-credentials-plugin/src/test/java/org/conjur/jenkins/api/ConjurAPITest.java
+/Users/sameer.shaik/MyWorkSpace/17OctV2.2.3-New-BitBucketIssueFixed/conjur-credentials-plugin/src/test/java/org/conjur/jenkins/credentials/CredentialsSupplierTest.java

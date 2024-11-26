@@ -1,0 +1,11 @@
+org/conjur/jenkins/credentials/ConjurCredentialProviderTest.class
+org/conjur/jenkins/configuration/ConjurConfigurationTest.class
+org/conjur/jenkins/conjursecrets/ConjurSecretCredentialImplTest.class
+org/conjur/jenkins/api/ConjurAPITest.class
+org/conjur/jenkins/conjursecrets/ConjurSecretCredentialsBindingTest.class
+org/conjur/jenkins/credentials/CredentialsSupplierTest.class
+InjectedTest.class
+org/conjur/jenkins/jwtauthimpl/JwtTokenTest.class
+org/conjur/jenkins/conjursecrets/ConjurSecretCredentiTest.class
+org/conjur/jenkins/credentials/ConjurCredentialStoreTest.class
+org/conjur/jenkins/configuration/GlobalConjurConfigurationTest.class

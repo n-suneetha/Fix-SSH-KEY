@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Created-By: Maven Archiver 3.6.0
+Build-Jdk-Spec: 17
+Specification-Title: Conjur Secrets Plugin
+Specification-Version: 2.2
+Implementation-Title: Conjur Secrets Plugin
+Implementation-Version: 2.2.3
+Group-Id: org.conjur.jenkins
+Short-Name: conjur-credentials
+Long-Name: Conjur Secrets Plugin
+Url: https://github.com/jenkinsci/conjur-credentials-plugin
+Plugin-Version: 2.2.3
+Hudson-Version: 2.346.3
+Jenkins-Version: 2.346.3
+Plugin-Dependencies: cloudbees-folder:6.740.ve4f4ffa_dea_54,credentials-
+ binding:523.vd859a_4b_122e6,credentials:1087.1089.v2f1b_9a_b_040e4,jack
+ son2-api:2.13.4.20221013-295.v8e29ea_354141
+Plugin-Developers: 
+Plugin-License-Name: MIT License
+Plugin-License-Url: https://opensource.org/licenses/MIT
+Plugin-ScmUrl: https://github.com/jenkinsci/conjur-credentials-plugin
+

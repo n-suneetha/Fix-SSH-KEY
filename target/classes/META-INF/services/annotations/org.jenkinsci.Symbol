@@ -1,0 +1,3 @@
+org.conjur.jenkins.conjursecrets.ConjurSecretCredentialsBinding$DescriptorImpl
+org.conjur.jenkins.conjursecrets.ConjurSecretUsernameCredentialsBinding$DescriptorImpl
+org.conjur.jenkins.conjursecrets.ConjurSecretUsernameSSHKeyCredentialsBinding$DescriptorImpl
