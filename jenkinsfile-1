@@ -31,6 +31,10 @@
 
 pipeline {
   agent any
+tools {
+        maven 'maven' // Name must match the Maven installation in Jenkins Global Tool Configuration
+         
+    }
  
   stages {
     stage('Scan') {
