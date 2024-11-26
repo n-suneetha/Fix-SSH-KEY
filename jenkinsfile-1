@@ -28,7 +28,7 @@ pipeline {
  
         stage('Build & SonarQube Analysis') {
             steps {
-            withEnv(["JAVA_HOME=${tool 'JDK17'}"]) {
+            withEnv(["JAVA_HOME=${tool 'jdk'}"]) {
                 sh '''
                 echo "Using JAVA_HOME=$JAVA_HOME"
                 mvn clean verify sonar:sonar \
