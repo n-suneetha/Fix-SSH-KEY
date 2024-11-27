@@ -7,7 +7,7 @@ pipeline {
     }
     environment {
         SONARQUBE = 'SonarQube_Server' // Name of the SonarQube server in Jenkins configuration
-        JAVA_HOME = '/Library/Java/JavaVirtualMachines/openlogic-openjdk-17.jdk/Contents/Home'  // Set JAVA_HOME explicitly
+        JAVA_HOME = '/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home'  // Set JAVA_HOME explicitly
         PATH = "${JAVA_HOME}/bin:${env.PATH}"  // Update PATH to include Java 17 binaries
        SONARQUBE_URL = 'http://192.168.1.2:9000'
         SONARQUBE_TOKEN = credentials('sonarqube-sever-token-ID')
