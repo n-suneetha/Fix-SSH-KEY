@@ -3,7 +3,7 @@ pipeline {
     tools {
         maven 'maven' // Name must match the Maven installation in Jenkins Global Tool Configuration
 
-       jdk 'jdk17'
+        
        
          
     }
@@ -12,7 +12,7 @@ pipeline {
         
         SONARQUBE_URL = 'http://192.168.1.2:9000'
         SONARQUBE_TOKEN = credentials('sonarqube-sever-token-ID')
-        JAVA_HOME ='/Library/Java/JavaVirtualMachines/openlogic-openjdk-17.jdk/Contents/Home'
+ 
     }
     stages {
        stage('Checkout') {
@@ -31,7 +31,7 @@ pipeline {
 stage('Build & SonarQube Analysis') {
 
 steps {
-              sh 'java -version'  // This should print Java 17 version
+               
                   sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=sonarqube-test -Dsonar.host.url=http://192.168.1.2:9000 -Dsonar.login=$SONARQUBE_TOKEN'
             }
 
