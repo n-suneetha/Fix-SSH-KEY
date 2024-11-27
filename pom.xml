@@ -14,14 +14,12 @@
 	<packaging>hpi</packaging>
 	<properties>
 		<jenkins.version>2.346.3</jenkins.version>
-		<java.level>17</java.level>
-		<source>17</source> <!-- Set source level to Java 17 -->
-                <target>17</target> <!-- Set target level to Java 17 -->
+		<java.level>11</java.level>
 		<!-- <hpi.compatibleSinceVersion>2.0.0</hpi.compatibleSinceVersion> -->
 	</properties>
 	<name>Conjur Secrets Plugin</name>
 	<description>Plugin to retrieve secrets from CyberArk/Conjur</description>
-	<version>2.2.3</version>
+	<version>2.2.4</version>
 	<url>https://github.com/jenkinsci/conjur-credentials-plugin</url>
 	<!-- The default licence for Jenkins OSS Plugins is MIT. Substitute for the
 	applicable one if needed. -->
@@ -219,27 +217,13 @@
 					</argLine>
 				</configuration>
 			</plugin>
-			<plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.10.1</version> <!-- Make sure to use an up-to-date version of the plugin -->
-            <configuration>
-                <source>17</source> <!-- Set source level to Java 17 -->
-                <target>17</target> <!-- Set target level to Java 17 -->
-            </configuration>
-        </plugin>
-			<plugin>
-          <groupId>org.sonarsource.scanner.maven</groupId>
-          <artifactId>sonar-maven-plugin</artifactId>
-          <version>3.9.0.2155</version>
-        </plugin>
 		</plugins>
 	</build>
 	<profiles>
 		<profile>
 			<id>jdk-9-and-above</id>
 			<activation>
-				<jdk>17</jdk>
+				<jdk>11</jdk>
 			</activation>
 		</profile>
 	</profiles>
