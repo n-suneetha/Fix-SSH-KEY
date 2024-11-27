@@ -27,7 +27,7 @@ pipeline {
             }
        
  
-        stage('Build & SonarQube Analysis') {
+        /*stage('Build & SonarQube Analysis') {
             steps {
            
            // sh 'java -version' // Verifies the JAVA_HOME setup
@@ -41,6 +41,6 @@ pipeline {
                     }
                 }*/
             }
-        }
+        }*/
     }
 }
