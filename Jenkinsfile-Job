@@ -30,17 +30,17 @@ pipeline {
             echo "Job-Jenkins Conjur Secret Username Cred PWD Val  : ${varVal}"
 
             // Run SonarQube analysis using mvn with environment variable
-            withSonarQubeEnv(credentialsId: 'sonarqube-sever-token-ID', installationName: 'SonarQube_Server') {
-                withEnv(["SONAR_AUTH_TOKEN=${varVal}"]) {
+            //withSonarQubeEnv(credentialsId: 'sonarqube-sever-token-ID', installationName: 'SonarQube_Server') {
+                //withEnv(["SONAR_AUTH_TOKEN=${varVal}"]) {
                     sh """
                         mvn clean verify sonar:sonar \
                             -Dsonar.projectKey=conjur-credentials \
                             -Dsonar.projectName="conjur-credentials" \
                             -Dsonar.host.url=http://192.168.1.2:9000/ \
-                            -Dsonar.login=${SONAR_AUTH_TOKEN}
+                            -Dsonar.login=${varVal}
                     """
-                }
-            }
+                ///}
+            //}
         }
     }
 }
