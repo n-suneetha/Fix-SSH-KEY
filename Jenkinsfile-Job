@@ -17,9 +17,17 @@ pipeline {
             }
         }
 
+    stage('SonarQube Scanner Code Analysis') {
+      steps {
+        withSonarQubeEnv(credentialsId: 'sonarqube-sever-token-ID', installationName: 'SonarQube_Server') {
+          sh "mvn clean verify sonar:sonar -Dsonar.projectKey=conjur-credentials -Dsonar.projectName='conjur-credentials'"
+        }
+      }
+    }
+
  
 
-       stage('Folder-1-Job-Conjur-Credentials With SonarQube') {
+       /*stage('Folder-1-Job-Conjur-Credentials With SonarQube') {
     steps {
         script {
             varVal = null
@@ -43,7 +51,7 @@ pipeline {
             //}
         }
     }
-}
+}*/
 
     }
 }
