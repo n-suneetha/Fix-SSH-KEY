@@ -19,7 +19,7 @@ pipeline {
 
     stage('SonarQube Scanner Code Analysis') {
       steps {
-        withSonarQubeEnv(credentialsId: 'sonarqube-sever-token-ID', installationName: 'SonarQube_Server') {
+        withSonarQubeEnv(credentialsId: 'folder-1-pipeline-regression-credential1', installationName: 'SonarQube_Server') {
           sh "mvn clean verify sonar:sonar -Dsonar.projectKey=conjur-credentials -Dsonar.projectName='conjur-credentials'"
         }
       }
