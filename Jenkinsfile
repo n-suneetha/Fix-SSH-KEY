@@ -19,7 +19,7 @@ pipeline {
 
     stage('Scan') {
       steps {
-        withSonarQubeEnv(credentialsId: 'SonarQubeTokenValue', installationName: 'sonarQube-server') {
+        withSonarQubeEnv(credentialsId: 'sonarQubeTokenValue', installationName: 'sonarQube-server') {
           sh "mvn clean verify sonar:sonar -Dsonar.projectKey=conjur-plugin -Dsonar.projectName='conjur-plugin'"
         }
       }
